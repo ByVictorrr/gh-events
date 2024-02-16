@@ -4,6 +4,11 @@ import userEvent from '@testing-library/user-event';
 
 import MainContent from './MainContent';
 
+// My tests!
+// Add something where you dont want to trigger a workflow: https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs in commit message
+// Add yet another comment
+
+
 describe('MainContent', () => {
   it('should render a button', () => {
     render(<MainContent />);
