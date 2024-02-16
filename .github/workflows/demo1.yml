@@ -3,10 +3,21 @@ name: Events Demo 1
 # on: [push, workflow_dispatch]
 on:
   pull_request:
+    branches:
+      - master # main
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'feat/**' # feat/new/button
     types:
       - opened
   workflow_dispatch:
-
+  push:
+    branches:
+      - master # main
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'feat/**' # feat/new/button
+    paths-ignore:
+      # anything in the workflows folder will ignore the trigger
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
